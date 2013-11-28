@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>callbackFunctions</title>
-	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-</head>
-<body>
-	<h1>Callback Functions</h1>
-	<em> What are they? </em>
+	<head>
+		<title>callbackFunctions</title>
+		<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+	   	<style>
+	    	body, h1 {
+	       		font-family: 'Cabin', serif;
+	    	}
+	   </style>
+	</head>
+	<body>
+		<h1>Callback Functions</h1>
+		<em> What are they? </em>
+		<hr>
+		<script type="text/javascript">
+			var result="Result: ";
 
-	<script type="text/javascript"></script>
-	
+			function fxn1(num){
+				document.writeln("fxn1: ", num, "<br>");
+				return ++num;
+			}	
 
-</body>
+			function fxn2(num, fxn){
+				document.writeln("fxn2 num: ", num, "<br>");
+				document.writeln("fxn2 num+fxn(num): ", num+fxn(num), "<br>");
+				return num+fxn(num);
+			}
+
+			result+= fxn2(3,fxn1);
+
+			document.writeln(result, "<br>");
+		</script>
+		<hr>
+		<script type="text/javascript">
+			function fxn3(num){
+				return num*-1; 
+			}
+
+			document.writeln(fxn2(3, fxn3));
+		</script>
+		<hr>
+		<p>My "ah ah!" moment: You can pass different functions for different scenarios. If (boolean) then fxn(um, fxn1) else fxn(num, fxn2)</p>
+
+		<button type="button" class="btn btn-default" onclick="fxn2(1,fxn1)">fxn (2,fxn1)</button>
+		<button type="button" class="btn btn-default" onclick="fxn2(1,fxn2)">fxn (2,fxn3)</button>
+		
+	</body>
 </html>
