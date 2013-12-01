@@ -1,0 +1,14 @@
+ <p id="theOne" data-janac="baa">This paragraph has a data-janac variable containing the value "Baa".</p>
+ <script>
+ 	var yourPara = document.getElementById('theOne');
+ 	var paraValue = yourPara.getAttribute('data-janac');
+ 	document.writeln("<br> Value in paragraph: ", paraValue);
+ </script>
+
+ <div id='strawberry-plant' data-fruit='12'></div>
+ <script>
+    // 'Getting' data-attributes using getAttribute
+    var plant = document.getElementById('strawberry-plant');
+    var fruitCount = plant.getAttribute('data-fruit'); // fruitCount = '12'
+
+ </script>
